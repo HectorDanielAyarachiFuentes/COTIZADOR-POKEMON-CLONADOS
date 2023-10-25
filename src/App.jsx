@@ -33,10 +33,10 @@ function App() {
   return (
     <div className="App">
       <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" className="logo" alt="Vite logo" />
+        <img src="https://scontent.fnqn4-1.fna.fbcdn.net/v/t39.30808-6/391626291_7067940753297285_6954890977725599637_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHJ2qLTodrcoNTlc1TIDsCjf99v5hG6fqx_32_mEbp-rLm-XJ6xAz5PCdh40uC9wIrvSm_l331_zryGks6CNy_e&_nc_ohc=d1H5-ZdsUxkAX_J4b95&_nc_ht=scontent.fnqn4-1.fna&oh=00_AfCbot7RlyQnc6fmUHHfWDnlHiW-y5EQwUu3ZeRQWzuBAQ&oe=653E6103" className="logo" alt="Vite logo" />
       </a>
       <a href="https://react.dev" target="_blank">
-        <img src="/react.svg" className="logo react" alt="React logo" />
+        <img src="https://scontent.fnqn4-1.fna.fbcdn.net/v/t39.30808-6/391626291_7067940753297285_6954890977725599637_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHJ2qLTodrcoNTlc1TIDsCjf99v5hG6fqx_32_mEbp-rLm-XJ6xAz5PCdh40uC9wIrvSm_l331_zryGks6CNy_e&_nc_ohc=d1H5-ZdsUxkAX_J4b95&_nc_ht=scontent.fnqn4-1.fna&oh=00_AfCbot7RlyQnc6fmUHHfWDnlHiW-y5EQwUu3ZeRQWzuBAQ&oe=653E6103" className="logo react" alt="React logo" />
       </a>
       <h1>Cotizador de Pokémon</h1>
       <button onClick={toggleCotizador}>
