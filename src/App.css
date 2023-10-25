@@ -1,21 +1,27 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+:root {
+  --primary-red: #EE5350;       /* Rojo */
+  --primary-yellow: #FFCB05;    /* Amarillo */
+  --primary-blue: #559EDF;      /* Azul */
+  --primary-green: #77CC55;     /* Verde */
+  --primary-brown: #926A2A;     /* Marrón */
+  --primary-gray: #A4A4A4;      /* Gris */
+  --primary-purple: #9B69D9;    /* Morado */
+  --primary-pink: #FF6F61;      /* Rosa */
+}
+
+.App {
+  font-family: Arial, sans-serif;
   text-align: center;
+  padding: 20px;
+  background-color: var(--primary-gray);
+  color: #333;
 }
 
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  will-change: transform;
+  animation: logo-spin 2s linear infinite, logo-hover 0.3s ease-in-out;
 }
 
 @keyframes logo-spin {
@@ -27,16 +33,104 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes logo-hover {
+  0% {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  50% {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  100% {
+    filter: drop-shadow(0 0 2em #646cffaa);
   }
 }
 
-.card {
-  padding: 2em;
+.logo.react {
+  height: 6em;
+  padding: 1.5em;
+  will-change: transform;
+  animation: logo-spin 2s linear infinite, logo-hover 0.3s ease-in-out;
 }
 
-.read-the-docs {
-  color: #888;
+h1 {
+  font-size: 24px;
+  color: var(--primary-blue);
+}
+
+button {
+  background-color: var(--primary-red);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-pink);
+}
+
+#pokemon-form {
+  background-color: #fff;
+  padding: 10px; /* Reducimos el padding */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px 0; /* Agregamos margen para separar */
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+select, input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#cotizaciones {
+  list-style: none;
+  padding: 0;
+}
+
+#cotizaciones li {
+  background-color: var(--primary-yellow);
+  color: #333;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#pokemon-form {
+  background-color: #fff;
+  padding: 20px; /* Aumentamos el padding para mayor separación */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+select, input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  /* Estilos para pantallas pequeñas */
+  #pokemon-form {
+    padding: 10px;
+  }
 }
