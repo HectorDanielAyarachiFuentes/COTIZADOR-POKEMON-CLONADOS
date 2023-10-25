@@ -1,0 +1,8 @@
+{
+    "pokemon": [
+      { "name": "Pikachu", "height": "40 cm", "dna": "Namukesin" },
+      { "name": "Charmander", "height": "60 cm", "dna": "Sayayin" },
+      { "name": "Bulbasaur", "height": "70 cm", "dna": "Ricardo Irio" }
+    ]
+  }
+  
