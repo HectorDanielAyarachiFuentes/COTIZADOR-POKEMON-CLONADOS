@@ -46,7 +46,7 @@ function CotizadorForm({ cotizarPokemon, pokemonData }) {
         onChange={handleAlturaChange}
       />
 
-      <label htmlFor="pokemon-dna">Tipo de ADN (extrato):</label>
+      <label htmlFor="pokemon-dna">Tipo de ADN (extracto):</label>
       <select id="pokemon-dna" onChange={handleDnaChange} value={selectedDna}>
         {pokemonData.pokemon.map((pokemon, index) => (
           <option key={index} value={index}>
