@@ -19,7 +19,7 @@ function Header() {
           alt="DulceHermosa"
         />
       </a>
-      <h1>Cotizador de Pokémon</h1>
+      <h1>Cotizador de Pokémon Clonados</h1>
     </div>
   );
 }
