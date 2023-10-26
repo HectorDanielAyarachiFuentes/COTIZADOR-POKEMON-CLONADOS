@@ -188,3 +188,16 @@ li:hover {
 }
 
 
+.cotizacion-item {
+  background-color: #FF3C3C; /* Rojo Pokédex (fondo) */
+  color: #FFFFFF; /* Texto blanco para contraste */
+  padding: 10px; /* Agregar relleno */
+  border: 2px solid #2A75BB; /* Azul Pokédex (borde) */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cotizacion-item:hover {
+  background-color: #2A75BB; /* Azul Pokédex (cambio de color en hover) */
+  transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
