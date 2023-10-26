@@ -1,8 +1,14 @@
 {
-    "pokemon": [
-      { "name": "Pikachu", "height": "40 cm", "dna": "Namukesin" },
-      { "name": "Charmander", "height": "60 cm", "dna": "Sayayin" },
-      { "name": "Bulbasaur", "height": "70 cm", "dna": "Ricardo Irio" }
-    ]
-  }
-  
+  "pokemon": [
+    { "name": "Pikachu", "height": "40 cm", "dna": "Namukesin" },
+    { "name": "Charmander", "height": "60 cm", "dna": "Sayayin" },
+    { "name": "Bulbasaur", "height": "70 cm", "dna": "Ricardo Irio" },
+    { "name": "Squirtle", "height": "55 cm", "dna": "El general Peron" },
+    { "name": "Jigglypuff", "height": "25 cm", "dna": "Milei" },
+    { "name": "Gengar", "height": "150 cm", "dna": "Ricardo Alfonsin" },
+    { "name": "Muk", "height": "80 cm", "dna": "Chespirito" },
+    { "name": "Mr. Mime", "height": "80 cm", "dna": "Wanda Nara" },
+    { "name": "Ditto", "height": "30 cm", "dna": "Homero Simpson" },
+    { "name": "Meowth", "height": "45 cm", "dna": "Chespirito" }
+  ]
+}

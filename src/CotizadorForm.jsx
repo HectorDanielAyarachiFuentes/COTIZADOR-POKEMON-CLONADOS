@@ -40,7 +40,7 @@ function CotizadorForm({ cotizarPokemon, pokemonData }) {
       <input
         type="number"
         id="pokemon-height"
-        min="23"
+        min="24"
         max="140"
         value={altura}
         onChange={handleAlturaChange}
