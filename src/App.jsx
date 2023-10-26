@@ -21,52 +21,9 @@ function App() {
     setShowCotizador(!showCotizador);
   };
 
-  const calcularPrecio = (altura) => {
-    let precioBase = 13000;
-
-    if (altura <= 50) {
-      precioBase += 2000;
-    } else if (altura <= 100) {
-      precioBase += 4000;
-    } else {
-      precioBase += 6000;
-    }
-
-    return precioBase;
-  };
-
-  const guardarDatosEnLocalStorage = (clave, datos) => {
-    try {
-      const datosString = JSON.stringify(datos);
-      localStorage.setItem(clave, datosString);
-    } catch (error) {
-      console.error('Error al guardar en el Local Storage:', error);
-    }
-  };
-
   const cotizarPokemon = (pokemon) => {
-    if (pokemon.name === 'Elija una opción' || !pokemon.height || !pokemon.dna) {
-      alert('Por favor, seleccione una opción y complete todos los datos necesarios para cotizar.');
-      return;
-    }
-
-    const altura = parseInt(pokemon.height);
-
-    if (altura > 140 || altura < 24) {
-      alert('La altura del Pokémon debe estar en el rango de 24 cm a 140 cm. Por favor, ingrese una altura válida.');
-      return;
-    }
-
-    const precio = calcularPrecio(altura);
-    const cotizacion = `${pokemon.name} mide ${altura} de altura y tiene ADN de tipo ${pokemon.dna}. Precio: $${precio.toLocaleString('en-US')}`;
-    const nuevasCotizaciones = [...cotizaciones, cotizacion];
-    setCotizaciones(nuevasCotizaciones);
-
-    setCotizacionInfo(cotizacion);
-
-    guardarDatosEnLocalStorage('cotizaciones', nuevasCotizaciones);
-
-    alert('Guardado automáticamente. Ver en Historial');
+    // Tu lógica para cotizar el Pokémon aquí.
+    // Puedes usar setCotizaciones para actualizar la lista de cotizaciones.
   };
 
   return (
@@ -78,7 +35,7 @@ function App() {
 
       {showCotizador ? (
         <>
-          <CotizadorForm cotizarPokemon={cotizarPokemon} pokemonData={pokemonData} />
+          <CotizadorForm cotizarPokemon={cotizarPokemon} pokemonData={pokemonData} cotizaciones={cotizaciones} setCotizaciones={setCotizaciones} setCotizacionInfo={setCotizacionInfo} />
           {cotizacionInfo && <p>{cotizacionInfo}</p>}
         </>
       ) : (
