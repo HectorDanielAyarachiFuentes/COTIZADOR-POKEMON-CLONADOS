@@ -8,7 +8,6 @@ import pokemonData from './pokemonData.json';
 function App() {
   const [showCotizador, setShowCotizador] = useState(true);
   const [cotizaciones, setCotizaciones] = useState([]);
-  const [historial, setHistorial] = useState([]);
   const [cotizacionInfo, setCotizacionInfo] = useState(null);
 
   useEffect(() => {
@@ -23,17 +22,13 @@ function App() {
   };
 
   const calcularPrecio = (altura) => {
-    // Precio base en dólares
     let precioBase = 13000;
 
     if (altura <= 50) {
-      // Agregar un ajuste si la altura es menor o igual a 50
       precioBase += 2000;
     } else if (altura <= 100) {
-      // Agregar otro ajuste si la altura está entre 51 y 100
       precioBase += 4000;
     } else {
-      // Agregar un ajuste adicional si la altura es mayor a 100
       precioBase += 6000;
     }
 
@@ -50,17 +45,27 @@ function App() {
   };
 
   const cotizarPokemon = (pokemon) => {
-    const precio = calcularPrecio(parseInt(pokemon.height));
-    const cotizacion = `${pokemon.name} mide ${pokemon.height} de altura y tiene ADN de tipo ${pokemon.dna}. Precio: $${precio.toLocaleString('en-US')}`;
+    if (pokemon.name === 'Elija una opción' || !pokemon.height || !pokemon.dna) {
+      alert('Por favor, seleccione una opción y complete todos los datos necesarios para cotizar.');
+      return;
+    }
+
+    const altura = parseInt(pokemon.height);
+
+    if (altura > 140 || altura < 24) {
+      alert('La altura del Pokémon debe estar en el rango de 24 a 140. Por favor, ingrese una altura válida.');
+      return;
+    }
+
+    const precio = calcularPrecio(altura);
+    const cotizacion = `${pokemon.name} mide ${altura} de altura y tiene ADN de tipo ${pokemon.dna}. Precio: $${precio.toLocaleString('en-US')}`;
     const nuevasCotizaciones = [...cotizaciones, cotizacion];
     setCotizaciones(nuevasCotizaciones);
 
-    // Actualiza el estado cotizacionInfo con la información
     setCotizacionInfo(cotizacion);
 
     guardarDatosEnLocalStorage('cotizaciones', nuevasCotizaciones);
 
-    // Muestra una alerta
     alert('Guardado automáticamente. Ver en Historial');
   };
 
