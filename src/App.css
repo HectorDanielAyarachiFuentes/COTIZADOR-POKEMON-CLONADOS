@@ -85,13 +85,8 @@ label {
   font-weight: bold;
 }
 
-select, input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 5px;
-}
+
+
 
 #cotizaciones {
   list-style: none;
@@ -120,21 +115,72 @@ label {
   font-weight: bold;
 }
 
-select, input {
+/* Style for input elements */
+input {
+  width: 98%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Adjusted the border-radius for a more typical look */
+  margin-top: 10px; /* Increased margin-top for spacing */
+}
+
+/* Style for select elements */
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 5px;
+  border-radius: 5px; /* Adjusted the border-radius for a more typical look */
+  margin-top: 10px; /* Increased margin-top for spacing */
 }
 
+
+/* Estilos para pantallas de tablet (768px o menos) */
 @media (max-width: 768px) {
-  /* Estilos para pantallas pequeñas */
   #pokemon-form {
     padding: 10px;
   }
+
+  /* Estilos para input en tablet */
+  input {
+    width: 98%; /* Usar 100% para llenar el ancho disponible */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  /* Estilos para select en tablet */
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 }
 
+/* Estilos para pantallas pequeñas, como smartphones (320px o menos) */
+@media (max-width: 320px) {
+  #pokemon-form {
+    padding: 5px; /* Puedes ajustar el espaciado según tus necesidades */
+  }
+
+  /* Estilos para input en pantallas pequeñas */
+  input {
+    width: 97%; /* Usar 100% para llenar el ancho disponible */
+    padding: 5px; /* Reducir el padding en pantallas pequeñas */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Estilos para select en pantallas pequeñas */
+  select {
+    width: 100%;
+    padding: 5px; /* Reducir el padding en pantallas pequeñas */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px; /* Reducir el margen superior para ahorrar espacio */
+  }
+}
 
 
 
