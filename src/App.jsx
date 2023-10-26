@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import CotizadorForm from './CotizadorForm';
@@ -9,6 +8,7 @@ import pokemonData from './pokemonData.json';
 function App() {
   const [showCotizador, setShowCotizador] = useState(true);
   const [cotizaciones, setCotizaciones] = useState([]);
+  const [historial, setHistorial] = useState([]);
 
   useEffect(() => {
     const cotizacionesLocalStorage = localStorage.getItem('cotizaciones');
@@ -56,9 +56,11 @@ function App() {
         {showCotizador ? 'Ver Historial' : 'Volver al Cotizador'}
       </button>
 
-      {showCotizador && <CotizadorForm cotizarPokemon={cotizarPokemon} pokemonData={pokemonData} />}
-
-      <HistorialCotizaciones cotizaciones={cotizaciones} />
+      {showCotizador ? (
+        <CotizadorForm cotizarPokemon={cotizarPokemon} pokemonData={pokemonData} />
+      ) : (
+        <HistorialCotizaciones cotizaciones={cotizaciones} />
+      )}
     </div>
   );
 }

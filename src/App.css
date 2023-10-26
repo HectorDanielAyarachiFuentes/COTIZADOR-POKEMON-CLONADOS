@@ -134,3 +134,55 @@ select, input {
     padding: 10px;
   }
 }
+
+
+
+
+#historial {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+h2 {
+  color: #e95151;
+}
+
+button {
+  background-color: #e95151;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  animation: fadeIn 0.5s ease-in-out;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+li:hover {
+  transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
