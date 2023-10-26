@@ -52,8 +52,8 @@ function App() {
 
     const altura = parseInt(pokemon.height);
 
-    if (altura > 140 || altura < 23) {
-      alert('La altura del Pokémon debe estar en el rango de 23 cm a 140 cm. Por favor, ingrese una altura válida.');
+    if (altura > 140 || altura < 24) {
+      alert('La altura del Pokémon debe estar en el rango de 24 cm a 140 cm. Por favor, ingrese una altura válida.');
       return;
     }
 

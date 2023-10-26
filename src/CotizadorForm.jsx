@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function CotizadorForm({ cotizarPokemon, pokemonData }) {
   const [selectedPokemon, setSelectedPokemon] = useState(0);
-  const [altura, setAltura] = useState(23);
+  const [altura, setAltura] = useState(24);
   const [selectedDna, setSelectedDna] = useState(0);
 
   const handleSelectChange = (event) => {
