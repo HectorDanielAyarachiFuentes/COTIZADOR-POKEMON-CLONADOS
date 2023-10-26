@@ -7,14 +7,14 @@ function Header() {
     <div>
       <a href="https://hectordanielayarachifuentes.github.io/TIENDA-RAMONCITO/" target="_blank">
         <img
-          src="/public/Imagenes Dulces/DULCE.jpg"
+          src="/Imagenes Dulces/DULCE.jpg"
           className="logo"
           alt="DulceHermosa"
         />
       </a>
       <a href="https://react.dev" target="_blank">
         <img
-          src="/public/Imagenes Dulces/DULCE.jpg"
+          src="/Imagenes Dulces/DULCE.jpg"
           className="logo react"
           alt="DulceHermosa"
         />
