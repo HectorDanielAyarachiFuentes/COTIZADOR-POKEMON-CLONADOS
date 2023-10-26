@@ -9,6 +9,7 @@ function App() {
   const [showCotizador, setShowCotizador] = useState(true);
   const [cotizaciones, setCotizaciones] = useState([]);
   const [historial, setHistorial] = useState([]);
+  const [cotizacionInfo, setCotizacionInfo] = useState(null);
 
   useEffect(() => {
     const cotizacionesLocalStorage = localStorage.getItem('cotizaciones');
@@ -22,13 +23,21 @@ function App() {
   };
 
   const calcularPrecio = (altura) => {
+    // Precio base en dólares
+    let precioBase = 13000;
+
     if (altura <= 50) {
-      return 10;
+      // Agregar un ajuste si la altura es menor o igual a 50
+      precioBase += 2000;
     } else if (altura <= 100) {
-      return 20;
+      // Agregar otro ajuste si la altura está entre 51 y 100
+      precioBase += 4000;
     } else {
-      return 30;
+      // Agregar un ajuste adicional si la altura es mayor a 100
+      precioBase += 6000;
     }
+
+    return precioBase;
   };
 
   const guardarDatosEnLocalStorage = (clave, datos) => {
@@ -42,11 +51,17 @@ function App() {
 
   const cotizarPokemon = (pokemon) => {
     const precio = calcularPrecio(parseInt(pokemon.height));
-    const cotizacion = `${pokemon.name} mide ${pokemon.height} de altura y tiene ADN de tipo ${pokemon.dna}. Precio: $${precio}`;
+    const cotizacion = `${pokemon.name} mide ${pokemon.height} de altura y tiene ADN de tipo ${pokemon.dna}. Precio: $${precio.toLocaleString('en-US')}`;
     const nuevasCotizaciones = [...cotizaciones, cotizacion];
     setCotizaciones(nuevasCotizaciones);
 
+    // Actualiza el estado cotizacionInfo con la información
+    setCotizacionInfo(cotizacion);
+
     guardarDatosEnLocalStorage('cotizaciones', nuevasCotizaciones);
+
+    // Muestra una alerta
+    alert('Guardado automáticamente. Ver en Historial');
   };
 
   return (
@@ -57,7 +72,10 @@ function App() {
       </button>
 
       {showCotizador ? (
-        <CotizadorForm cotizarPokemon={cotizarPokemon} pokemonData={pokemonData} />
+        <>
+          <CotizadorForm cotizarPokemon={cotizarPokemon} pokemonData={pokemonData} />
+          {cotizacionInfo && <p>{cotizacionInfo}</p>}
+        </>
       ) : (
         <HistorialCotizaciones cotizaciones={cotizaciones} />
       )}
