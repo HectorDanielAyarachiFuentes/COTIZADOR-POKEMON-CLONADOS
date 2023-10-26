@@ -4,14 +4,9 @@ import './App.css';
 function HistorialCotizaciones({ cotizaciones }) {
   const [historial, setHistorial] = useState(cotizaciones);
 
-  const reiniciarHistorial = () => {
-    setHistorial([]);
-  };
-
   return (
     <div id="historial">
       <h2>Historial de Cotizaciones</h2>
-      <button onClick={reiniciarHistorial}>Reiniciar Historial</button>
       <ul id="cotizaciones">
         {historial.map((cotizacion, index) => (
           <li key={index}>
