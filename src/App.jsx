@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import pokemonData from './pokemonData.json';
 
@@ -7,14 +7,14 @@ function Header() {
     <div>
       <a href="https://vitejs.dev" target="_blank">
         <img
-          src="public\Imagenes Dulces\DULCE.jpg"
+          src="/public/Imagenes Dulces/DULCE.jpg"
           className="logo"
           alt="DulceHermosa"
         />
       </a>
       <a href="https://react.dev" target="_blank">
         <img
-          src="public\Imagenes Dulces\DULCE.jpg"
+          src="/public/Imagenes Dulces/DULCE.jpg"
           className="logo react"
           alt="DulceHermosa"
         />
@@ -75,6 +75,14 @@ function App() {
   const [showCotizador, setShowCotizador] = useState(true);
   const [cotizaciones, setCotizaciones] = useState([]);
 
+  useEffect(() => {
+    // Recuperar cotizaciones almacenadas en el Local Storage al cargar la aplicación
+    const cotizacionesLocalStorage = localStorage.getItem('cotizaciones');
+    if (cotizacionesLocalStorage) {
+      setCotizaciones(JSON.parse(cotizacionesLocalStorage));
+    }
+  }, []); // El segundo argumento [] asegura que esto solo se ejecute una vez al cargar la aplicación
+
   const toggleCotizador = () => {
     setShowCotizador(!showCotizador);
   };
@@ -90,10 +98,23 @@ function App() {
     }
   };
 
+  const guardarDatosEnLocalStorage = (clave, datos) => {
+    try {
+      const datosString = JSON.stringify(datos);
+      localStorage.setItem(clave, datosString);
+    } catch (error) {
+      console.error('Error al guardar en el Local Storage:', error);
+    }
+  };
+
   const cotizarPokemon = (pokemon) => {
     const precio = calcularPrecio(parseInt(pokemon.height));
     const cotizacion = `${pokemon.name} mide ${pokemon.height} de altura y tiene ADN de tipo ${pokemon.dna}. Precio: $${precio}`;
-    setCotizaciones([...cotizaciones, cotizacion]);
+    const nuevasCotizaciones = [...cotizaciones, cotizacion];
+    setCotizaciones(nuevasCotizaciones);
+
+    // Guardar las cotizaciones en el Local Storage
+    guardarDatosEnLocalStorage('cotizaciones', nuevasCotizaciones);
   };
 
   return (
