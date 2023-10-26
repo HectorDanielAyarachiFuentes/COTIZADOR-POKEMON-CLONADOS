@@ -9,14 +9,14 @@ function Header() {
         <img
           src="public\Imagenes Dulces\DULCE.jpg"
           className="logo"
-          alt="Vite logo"
+          alt="DulceHermosa"
         />
       </a>
       <a href="https://react.dev" target="_blank">
         <img
           src="public\Imagenes Dulces\DULCE.jpg"
           className="logo react"
-          alt="React logo"
+          alt="DulceHermosa"
         />
       </a>
       <h1>Cotizador de Pokémon</h1>
