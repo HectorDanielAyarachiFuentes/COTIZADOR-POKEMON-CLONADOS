@@ -5,7 +5,7 @@ import pokemonData from './pokemonData.json';
 function Header() {
   return (
     <div>
-      <a href="https://vitejs.dev" target="_blank">
+      <a href="https://hectordanielayarachifuentes.github.io/TIENDA-RAMONCITO/" target="_blank">
         <img
           src="/public/Imagenes Dulces/DULCE.jpg"
           className="logo"
