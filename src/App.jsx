@@ -15,17 +15,13 @@ function App() {
   const [showCotizador, setShowCotizador] = useState(true);
   const [cotizaciones, setCotizaciones] = useState([]);
   const [cotizacionInfo, setCotizacionInfo] = useState(null);
-  const navigate = useNavigate(); // Obtén la función de navegación
 
   useEffect(() => {
     const cotizacionesLocalStorage = localStorage.getItem('cotizaciones');
     if (cotizacionesLocalStorage) {
       setCotizaciones(JSON.parse(cotizacionesLocalStorage));
     }
-
-    // Redirigir a la página principal al cargar la página
-    navigate('/');
-  }, [navigate]);
+  }, []);
 
   const toggleCotizador = () => {
     setShowCotizador(!showCotizador);
