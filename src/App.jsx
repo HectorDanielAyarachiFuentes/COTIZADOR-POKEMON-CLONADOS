@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate
 import Header from './Header';
 import CotizadorForm from './CotizadorForm';
 import HistorialCotizaciones from './HistorialCotizaciones';
@@ -9,12 +10,12 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Default from "./pages/Default";
 import Dashboard from "./pages/Dashboard";
-import { Routes, Route, useNavigate } from 'react-router-dom';
 
 function App() {
   const [showCotizador, setShowCotizador] = useState(true);
   const [cotizaciones, setCotizaciones] = useState([]);
   const [cotizacionInfo, setCotizacionInfo] = useState(null);
+  const navigate = useNavigate(); // Get the navigation function
 
   useEffect(() => {
     const cotizacionesLocalStorage = localStorage.getItem('cotizaciones');
@@ -28,29 +29,41 @@ function App() {
   };
 
   const cotizarPokemon = (pokemon) => {
-    // Tu lógica para cotizar el Pokémon aquí.
-    // Puedes usar setCotizaciones para actualizar la lista de cotizaciones.
+    // Your logic to calculate the Pokémon quote goes here.
+    // You can use setCotizaciones to update the list of quotes.
   };
 
   return (
     <div className="pokemon-app">
       <h1 className="pokemon-title">Pokémon Routes</h1>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="about" element={<About />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="*" element={<Home />} />
-        </Route>
-      </Routes>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="about">About</Link>
+          </li>
+          <li>
+            <Link to="dashboard">Dashboard</Link>
+          </li>
+        </ul>
+      </nav>
 
       <Header />
       <button onClick={toggleCotizador}>
-        {showCotizador ? 'Ver Historial' : 'Volver al Cotizador'}
+        {showCotizador ? 'View History' : 'Back to Quoter'}
       </button>
 
       {showCotizador ? (
         <>
-          <CotizadorForm cotizarPokemon={cotizarPokemon} pokemonData={pokemonData} cotizaciones={cotizaciones} setCotizaciones={setCotizaciones} setCotizacionInfo={setCotizacionInfo} />
+          <CotizadorForm
+            cotizarPokemon={cotizarPokemon}
+            pokemonData={pokemonData}
+            cotizaciones={cotizaciones}
+            setCotizaciones={setCotizaciones}
+            setCotizacionInfo={setCotizacionInfo}
+          />
           {cotizacionInfo && <p>{cotizacionInfo}</p>}
         </>
       ) : (
