@@ -4,6 +4,12 @@ import CotizadorForm from './CotizadorForm';
 import HistorialCotizaciones from './HistorialCotizaciones';
 import './App.css';
 import pokemonData from './pokemonData.json';
+import Layout from "./pages/Layout";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Default from "./pages/Default";
+import Dashboard from "./pages/Dashboard";
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [showCotizador, setShowCotizador] = useState(true);
@@ -27,7 +33,16 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="pokemon-app">
+      <h1 className="pokemon-title">Pokémon Routes</h1>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="about" element={<About />} />
+          <Route path="/" element={<Home />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="*" element={<Default />} />
+        </Route>
+      </Routes>
       <Header />
       <button onClick={toggleCotizador}>
         {showCotizador ? 'Ver Historial' : 'Volver al Cotizador'}
