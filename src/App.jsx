@@ -36,13 +36,14 @@ function App() {
     <div className="pokemon-app">
       <h1 className="pokemon-title">Pokémon Routes</h1>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="about" element={<About />} />
-          <Route path="/" element={<Home />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="*" element={<Default />} />
-        </Route>
-      </Routes>
+  <Route path="/" element={<Layout />}>
+    <Route path="about" element={<About />} />
+    <Route index element={<Home />} /> {/* Utiliza 'index' en lugar de '/' */}
+    <Route path="dashboard" element={<Dashboard />} />
+    <Route path="*" element={<Default />} />
+  </Route>
+</Routes>
+
       <Header />
       <button onClick={toggleCotizador}>
         {showCotizador ? 'Ver Historial' : 'Volver al Cotizador'}
