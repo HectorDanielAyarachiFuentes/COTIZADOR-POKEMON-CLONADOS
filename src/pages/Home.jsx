@@ -7,6 +7,9 @@ const Home = () => {
     padding: '2rem',
     textAlign: 'center',
     animation: 'fadeIn 2s',
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gridGap: '1rem',
   };
 
   const titleStyle = {
@@ -19,6 +22,15 @@ const Home = () => {
     fontSize: '1.2rem',
     margin: '1rem 0',
   };
+
+  const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+  if (mediaQuery.matches) {
+    // Estilos para pantallas más pequeñas (máximo 768px)
+    homeStyle.gridTemplateColumns = '1fr';
+    titleStyle.fontSize = '2rem';
+    paragraphStyle.fontSize = '1rem';
+  }
 
   return (
     <div style={homeStyle}>
