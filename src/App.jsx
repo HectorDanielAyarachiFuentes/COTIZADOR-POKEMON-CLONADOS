@@ -38,12 +38,11 @@ function App() {
       <Routes>
   <Route path="/" element={<Layout />}>
     <Route path="about" element={<About />} />
-    <Route path="dashboard" element={<Dashboard />} />
     <Route index element={<Home />} /> {/* Utiliza 'index' en lugar de '/' */}
+    <Route path="dashboard" element={<Dashboard />} />
     <Route path="*" element={<Default />} />
   </Route>
 </Routes>
-
 
       <Header />
       <button onClick={toggleCotizador}>
