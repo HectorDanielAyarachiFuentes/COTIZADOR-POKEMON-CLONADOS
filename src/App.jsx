@@ -43,7 +43,7 @@ function App() {
     } else {
       // Crea el elemento de audio y establece su origen
       const newAudioPlayer = new Audio();
-      newAudioPlayer.src = 'https://www.cjoint.com/doc/23_09/MIwusXVTDcd_SaveTube.io---Pokémon---¡Atrápalos-Ya-Latino-Oscar-Roa-Full-128-kbps-.mp3';
+      newAudioPlayer.src = '/Musica/Alexandre Pires-Amame.mp3';
       setAudioPlayer(newAudioPlayer);
       newAudioPlayer.play();
     }
