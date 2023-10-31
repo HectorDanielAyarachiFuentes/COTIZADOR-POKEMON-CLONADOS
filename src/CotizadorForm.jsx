@@ -4,6 +4,7 @@ function CotizadorForm({ cotizaciones, setCotizaciones, setCotizacionInfo, pokem
   const [selectedPokemon, setSelectedPokemon] = useState('');
   const [altura, setAltura] = useState('24');
   const [selectedDna, setSelectedDna] = useState('');
+  const [selectedRareza, setSelectedRareza] = useState('');
 
   const handleSelectChange = (event) => {
     setSelectedPokemon(event.target.value);
@@ -17,11 +18,16 @@ function CotizadorForm({ cotizaciones, setCotizaciones, setCotizacionInfo, pokem
     setSelectedDna(event.target.value);
   };
 
+  const handleRarezaChange = (event) => {
+    setSelectedRareza(event.target.value);
+  };
+
   const handleCotizarClick = () => {
     cotizarPokemon({
       name: selectedPokemon,
       height: altura,
       dna: selectedDna,
+      rareza: selectedRareza,
     });
   };
 
@@ -39,6 +45,17 @@ function CotizadorForm({ cotizaciones, setCotizaciones, setCotizacionInfo, pokem
     return precioBase;
   };
 
+  const getRarezaFactor = (rareza) => {
+    switch (rareza) {
+      case 'común':
+        return 1.1; // Ejemplo de factor para Pokémon comunes.
+      case 'raro':
+        return 1.5; // Ejemplo de factor para Pokémon raros.
+      default:
+        return 1.0; // Valor por defecto si no se especifica rareza.
+    }
+  };
+
   const guardarDatosEnLocalStorage = (clave, datos) => {
     try {
       const datosString = JSON.stringify(datos);
@@ -49,7 +66,7 @@ function CotizadorForm({ cotizaciones, setCotizaciones, setCotizacionInfo, pokem
   };
 
   const cotizarPokemon = (pokemon) => {
-    if (pokemon.name === '' || !pokemon.height || !pokemon.dna) {
+    if (pokemon.name === '' || !pokemon.height || !pokemon.dna || !pokemon.rareza) {
       alert('Por favor, seleccione una opción y complete todos los datos necesarios para cotizar.');
       return;
     }
@@ -61,8 +78,11 @@ function CotizadorForm({ cotizaciones, setCotizaciones, setCotizacionInfo, pokem
       return;
     }
 
-    const precio = calcularPrecio(altura);
-    const cotizacion = `${pokemon.name} mide ${altura} de altura y tiene ADN de tipo ${pokemon.dna}. Precio: $${precio.toLocaleString('en-US')}`;
+    const precioBase = calcularPrecio(altura);
+    const rarezaFactor = getRarezaFactor(pokemon.rareza);
+    const precioFinal = precioBase * rarezaFactor;
+
+    const cotizacion = `${pokemon.name} mide ${altura} de altura, tiene ADN de tipo ${pokemon.dna}, rareza ${pokemon.rareza}. Precio: $${precioFinal.toLocaleString('en-US')}`;
     const nuevasCotizaciones = [...cotizaciones, cotizacion];
     setCotizaciones(nuevasCotizaciones);
 
@@ -103,6 +123,14 @@ function CotizadorForm({ cotizaciones, setCotizaciones, setCotizacionInfo, pokem
             {pokemon.dna}
           </option>
         ))}
+      </select>
+
+      <label htmlFor="pokemon-rareza">Rareza del Pokémon:</label>
+      <select id="pokemon-rareza" onChange={handleRarezaChange} value={selectedRareza}>
+        <option value="">Elija una opción</option>
+        <option value="común">Común</option>
+        <option value="raro">Raro</option>
+        {/* Agrega más opciones según tu necesidad */}
       </select>
 
       <button type="button" onClick={handleCotizarClick}>
