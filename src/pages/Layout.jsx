@@ -13,13 +13,13 @@ const Layout = () => {
       <nav>
         <ul style={navStyle}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Hogar</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">Nosotros</Link>
           </li>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/dashboard">Dedicatoria</Link>
           </li>
         </ul>
       </nav>
