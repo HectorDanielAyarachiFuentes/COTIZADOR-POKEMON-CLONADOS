@@ -36,21 +36,28 @@ const About = () => {
     },
   };
 
+  const responsiveContainer = {
+    maxWidth: '1000px',
+    margin: '0 auto',
+  };
+
   return (
     <div style={aboutContainerStyle}>
-      <h1 style={aboutTitleStyle}>Nuestra Historia</h1>
-      <p style={aboutParagraphStyle}>
-        La clonación Pokémon nos ha llevado a lugares inimaginables. Durante tiempos de crisis, nos encontramos con un dilema que solo podía resolverse de una manera sorprendente. Conocimos a Héctor, un programador novato que comenzó su viaje con nosotros.
-      </p>
-      <p style={aboutParagraphStyle}>
-        Héctor, recién llegado, trajo consigo un aire de misterio. Algunos dicen que es un ser humano clonado, otros creen que es una creación de la ciencia ficción. En cualquier caso, su pasión y creatividad han resultado en hermosas animaciones CSS que hacen que nuestros Pokémon clonados cobren vida.
-      </p>
-      <p style={aboutParagraphStyle}>
-        En esta sección, te invitamos a explorar nuestro mundo de forma divertida. Héctor ha preparado animaciones sorprendentes que seguramente te sacarán una sonrisa. ¡Y no te preocupes, todo es responsivo, así que disfruta de la experiencia en cualquier dispositivo!
-      </p>
-      <button style={{ ...buttonStyle, ...hoverEffect }}>
-        <span>¡Diviértete aquí! </span>
-      </button>
+      <div style={responsiveContainer}>
+        <h1 style={aboutTitleStyle}>Nuestra Historia</h1>
+        <p style={aboutParagraphStyle}>
+          La clonación Pokémon nos ha llevado a lugares inimaginables. Durante tiempos de crisis, nos encontramos con un dilema que solo podía resolverse de una manera sorprendente. Conocimos a Héctor, un programador novato que comenzó su viaje con nosotros.
+        </p>
+        <p style={aboutParagraphStyle}>
+          Héctor, recién llegado, trajo consigo un aire de misterio. Algunos dicen que es un ser humano clonado, otros creen que es una creación de la ciencia ficción. En cualquier caso, su pasión y creatividad han resultado en hermosas animaciones CSS que hacen que nuestros Pokémon clonados cobren vida.
+        </p>
+        <p style={aboutParagraphStyle}>
+          En esta sección, te invitamos a explorar nuestro mundo de forma divertida. Héctor ha preparado animaciones sorprendentes que seguramente te sacarán una sonrisa. ¡Y no te preocupes, todo es responsivo, así que disfruta de la experiencia en cualquier dispositivo!
+        </p>
+        <button style={{ ...buttonStyle, ...hoverEffect }}>
+          <span>¡Diviértete aquí! </span>
+        </button>
+      </div>
     </div>
   );
 };
