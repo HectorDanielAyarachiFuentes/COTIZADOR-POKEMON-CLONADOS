@@ -15,6 +15,7 @@ function App() {
   const [showCotizador, setShowCotizador] = useState(true);
   const [cotizaciones, setCotizaciones] = useState([]);
   const [cotizacionInfo, setCotizacionInfo] = useState(null);
+  const [audioPlayer, setAudioPlayer] = useState(null);
 
   useEffect(() => {
     const cotizacionesLocalStorage = localStorage.getItem('cotizaciones');
@@ -28,21 +29,59 @@ function App() {
   };
 
   const cotizarPokemon = (pokemon) => {
-    // Tu lógica para cotizar el Pokémon aquí.
+    // Tu lógica para cotizar a los Pokémon va aquí.
     // Puedes usar setCotizaciones para actualizar la lista de cotizaciones.
+  };
+
+  const playAudio = () => {
+    if (audioPlayer) {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+      } else {
+        audioPlayer.pause();
+      }
+    } else {
+      // Crea el elemento de audio y establece su origen
+      const newAudioPlayer = new Audio();
+      newAudioPlayer.src = 'https://www.cjoint.com/doc/23_09/MIwusXVTDcd_SaveTube.io---Pokémon---¡Atrápalos-Ya-Latino-Oscar-Roa-Full-128-kbps-.mp3';
+      setAudioPlayer(newAudioPlayer);
+      newAudioPlayer.play();
+    }
+  };
+
+  const pokemonColors = {
+    background: '#f44242', // Color de fondo inspirado en Pokémon
+    text: '#fff', // Color de texto
   };
 
   return (
     <div className="pokemon-app">
-      <h1 className="pokemon-title">Pokémon Routes</h1>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <button
+          style={{
+            backgroundColor: pokemonColors.background,
+            color: pokemonColors.text,
+            border: 'none',
+            cursor: 'pointer',
+            padding: '10px 20px',
+            borderRadius: '5px',
+            fontSize: '16px',
+            boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+          }}
+          onClick={playAudio}
+        >
+          <h1 style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>¡Pokemon Routers! </h1>
+        </button>
+      </div>
+
       <Routes>
-  <Route path="/" element={<Layout />}>
-    <Route path="about" element={<About />} />
-    <Route index element={<Home />} /> {/* Utiliza 'index' en lugar de '/' */}
-    <Route path="dashboard" element={<Dashboard />} />
-    <Route path="*" element={<Default />} />
-  </Route>
-</Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="about" element={<About />} />
+          <Route index element={<Home />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="*" element={<Default />} />
+        </Route>
+      </Routes>
 
       <Header />
       <button onClick={toggleCotizador}>
