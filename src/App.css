@@ -247,3 +247,14 @@ li:hover {
   background-color: #2A75BB; /* Azul Pokédex (cambio de color en hover) */
   transform: scale(1.05); /* Efecto de escala al pasar el ratón */
 }
+
+
+/* Centra los titulos principales */
+.pokemon-app {
+  text-align: center;
+}
+
+.pokemon-title {
+  font-size: 2rem;
+  margin: 20px 0;
+}
