@@ -21,7 +21,7 @@ const Dashboard = () => {
             alt="Perro lindo amarillo saca la lengua"
             style={{ maxWidth: '80%', maxHeight: '80%' }}
           />
-          <p className="legend">Dulce sacacando la lengua</p>
+          <p className="legend">Dulce Rebelde</p>
         </div>
         <div>
           <img
