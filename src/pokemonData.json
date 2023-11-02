@@ -2,7 +2,7 @@
   "pokemon": [
     { "name": "Pikachu", "height": "40 cm", "dna": "Namukesin" },
     { "name": "Charmander", "height": "60 cm", "dna": "Sayayin" },
-    { "name": "Bulbasaur", "height": "70 cm", "dna": "Ricardo Irio" },
+    { "name": "Bulbasaur", "height": "70 cm", "dna": "Ricardo Iorio" },
     { "name": "Squirtle", "height": "55 cm", "dna": "El general Peron" },
     { "name": "Jigglypuff", "height": "25 cm", "dna": "Milei" },
     { "name": "Gengar", "height": "150 cm", "dna": "Ricardo Alfonsin" },
