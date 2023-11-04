@@ -5,7 +5,10 @@ El Cotizador de Pokémon Clonados es un proyecto que permite calcular el costo d
 ## Imágenes del Proyecto
 
 ### Móvil Responsivo
-![Móvil Responsivo](https://github.com/HectorDanielAyarachiFuentes/COTIZADOR-POKEMON-CLONADOS/raw/main/Fotos%20Readme/mobil-reponsivo.gif)
+<div style="text-align: center;">
+  <img src="https://github.com/HectorDanielAyarachiFuentes/COTIZADOR-POKEMON-CLONADOS/raw/main/Fotos%20Readme/mobil-reponsivo.gif" alt="Móvil Responsivo" />
+</div>
+
 
 La aplicación es completamente responsiva y se adapta a dispositivos móviles, manteniendo una experiencia de usuario óptima en pantallas pequeñas.
 
