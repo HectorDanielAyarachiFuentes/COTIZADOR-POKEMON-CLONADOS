@@ -26,9 +26,23 @@ Esta aplicación, creada con React y React Vite, permite calcular el costo de cl
 - Calcula el costo de clonar un Pokémon.
 - Navegación intuitiva entre las diferentes secciones de la aplicación.
 - Interfaz de usuario atractiva y responsive para dispositivos móviles y pantallas grandes.
+- Utiliza almacenamiento local (localStorage) para guardar la información y facilitar su procesamiento.
+- Ofrece un historial que registra todas las cotizaciones realizadas por los usuarios.
 
 ## Cómo Ejecutar la Aplicación
 1. Clona este repositorio en tu máquina local.
 2. Abre una terminal en el directorio del proyecto.
 3. Ejecuta el siguiente comando para instalar las dependencias:
+```bash
+npm install
+```
+4. Inicia la aplicación con el siguiente comando:
+
+```bash
+npm run dev
+```
+
+¡Buena suerte con tu aplicación de cotización de Pokémon clonados!
+
+
 
